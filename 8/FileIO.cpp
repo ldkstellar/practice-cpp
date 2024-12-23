@@ -6,6 +6,7 @@
 // fstream 파일 입력 및 출력
 // 파일 스트림에 << , >> 조정자등도 쓸 수 있음
 using namespace std;
+
 int main(int argc, char const *argv[])
 {
     // 읽기 전용 파일 오픈
