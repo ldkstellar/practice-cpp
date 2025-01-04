@@ -1,0 +1,3 @@
+Hello,
+I love c++.
+C++ is the best computer language.
