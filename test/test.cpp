@@ -3,7 +3,8 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    int *ptr = new int;
+    int *ptr = new int(3);
+    cout << *ptr << endl;
     delete ptr;
     int *array = new int;
     const int SIZE = 3;
