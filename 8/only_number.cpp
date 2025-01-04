@@ -2,33 +2,20 @@
 #include <fstream>
 using namespace std;
 
+// only 숫자만 읽을수 있다. 예외처리 없는 프로그램
 int main(int argc, char const *argv[])
 {
     ifstream fin;
     int number;
-    string trash;
-    fin.open("correct.txt");
-    while (true)
+    fin.open("number.txt");
+    while (!fin.eof())
     {
-        fin >> number;
-        if (fin.eof())
-        {
-            break;
-            /* code */
-        }
 
-        if (!fin.fail())
-        {
-            cout << number << endl;
-            continue;
-            /* code */
-        }
-        // failbit 일때는 stream에서 받아서 저장이 불가능하다.
-        fin.clear();  // 그래서 faibit false로 변환
-        fin >> trash; // 당시 할당
+        fin >> number;
+
+        cout << number << endl;
         /* code */
     }
-    fin.close();
-    /* code */
+
     return 0;
 }
