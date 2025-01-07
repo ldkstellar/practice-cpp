@@ -2,24 +2,21 @@
 #include <fstream>
 using namespace std;
 
-using namespace std;
 struct Record
 {
-    char *size;
+    char text[512];
+    int id;
 };
 
 int main(int argc, char const *argv[])
 {
-    ifstream fin("HelloWorld.txt", ios_base::in | ios_base::binary);
+    ifstream fin("studentRecords.dat", ios_base::in | ios_base::binary);
 
     if (fin.is_open())
     {
         Record record;
-        const int value = sizeof(fin.tellg());
-
-        record.size = new char[value];
-        fin.read(record.size, value);
-        cout << record.size;
+        fin.read((char *)&record, sizeof(Record));
+        cout << record.text << " " << record.id << endl;
     }
 
     return 0;
