@@ -17,7 +17,7 @@ int main(int argc, char const *argv[])
         /* code */
     }
 
-    delete[] (myArray);
+    delete[] myArray;
     scanf("%d", array);
     cout << *array << endl;
     delete array;
