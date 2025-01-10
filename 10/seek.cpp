@@ -13,7 +13,6 @@ int main(int argc, char const *argv[]) {
         if (!fs.fail()) {
             /* code */
         }
-
         /* code */
     }
 
