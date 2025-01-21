@@ -16,8 +16,8 @@ int main(int argc, char const *argv[])
     {
         Record record;
         fin.read((char *)&record, sizeof(Record));
-        cout << record.text << " " << record.id << endl;
+        cout << record.text << endl;
+        cout << record.id << endl;
     }
-
     return 0;
 }
