@@ -1,0 +1,6 @@
+.vscode
+*.dSYM
+!*.cpp
+# 모든 실행 권한이 있는 파일 무시
+**/*[!/]* 
+!*.gitignore
