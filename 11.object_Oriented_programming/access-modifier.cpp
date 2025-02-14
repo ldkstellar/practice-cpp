@@ -20,7 +20,7 @@ public:
         isHeapAllocated = isHeap;
     }
 
-    void print() { cout << mX << " " << mY << endl; }
+    void Print() { cout << mX << " " << mY << endl; }
 
     ~Vector()
     {
@@ -51,13 +51,13 @@ int main(int argc, char const *argv[])
 {
     // stack 메모리 만들기 빠름 바로 저장
     Vector a(1, 2, false);
-    a.print();
+    a.Print();
     // heap 메모리에 만들기
     Vector *b = new Vector(2, 3, true);
-    b->print();
+    b->Print();
 
     Vector c = AddVector(a, *b);
-    c.print();
+    c.Print();
 
     return 0;
 }

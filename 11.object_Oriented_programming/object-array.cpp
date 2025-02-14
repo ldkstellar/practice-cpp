@@ -14,10 +14,10 @@ public:
     int age;
     Vector();
     ~Vector();
-    void print();
+    void Print();
 };
 
-void Vector::print()
+void Vector::Print()
 {
     cout << x << y << endl;
 }
@@ -43,8 +43,8 @@ int main(int argc, char const *argv[])
 
     // 더블 포인터는 멤버변수에 접근이 불가능하다.
     // 멤버 변수를 접근하려는 형태는 포인터 형태여야 한다.
-    stack.print(); //
-    ptr->print();  // 객체를 가르키는 포인터로 접근을 할때
+    stack.Print(); //
+    ptr->Print();  // 객체를 가르키는 포인터로 접근을 할때
 
     Vector *list = new Vector[10];
     delete[] list;
@@ -62,7 +62,7 @@ int main(int argc, char const *argv[])
     {
         javaList[i] = new Vector(); //
 
-        javaList[i][0].print();
+        javaList[i][0].Print();
         /* code */
     }
     cout << "끝" << endl;
@@ -74,11 +74,11 @@ int main(int argc, char const *argv[])
 
     for (size_t i = 0; i < 4; i++)
     {
-        myList[i].print(); // 객체 자체의 멤버에 접근 할 때
+        myList[i].Print(); // 객체 자체의 멤버에 접근 할 때
 
-        (*myListPtr).print(); // 연산자 우선순위 때문이다. 멤버 변수를 접근하는데 우선이다.
+        (*myListPtr).Print(); // 연산자 우선순위 때문이다. 멤버 변수를 접근하는데 우선이다.
 
-        myListPtr->print(); // 객체를 가르키는 포인터를 통해서 멤버변수를 접근 위의 연산을 함축 시킨것이다.
+        myListPtr->Print(); // 객체를 가르키는 포인터를 통해서 멤버변수를 접근 위의 연산을 함축 시킨것이다.
 
         ++myListPtr; // 증가함수
                      /* code */
