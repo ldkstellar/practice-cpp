@@ -12,6 +12,7 @@ struct mVector{
     int y;
 
 };
+
 int main(int argc, char const *argv[])
 {
     // 메모리의 값을 복사한다.
