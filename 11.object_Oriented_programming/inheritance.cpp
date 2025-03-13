@@ -1,17 +1,14 @@
 #include <iostream>
 
 class Animal {
- public:
+ protected:
   Animal(int age);
-  friend class Cat;
-
- private:
   int mAge;
 };
 
 Animal::Animal(int age) : mAge(age) {}
 
-class Cat : public Animal {
+class Cat : protected Animal {
  public:
   Cat(int age, const char* name);
   ~Cat();
@@ -20,6 +17,7 @@ class Cat : public Animal {
  private:
   char* mName;
 };
+
 void Cat::print() {
   std::cout << "이름: " << mName << std::endl;
   std::cout << "나이" << mAge << std::endl;
