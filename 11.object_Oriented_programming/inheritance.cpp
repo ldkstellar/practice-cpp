@@ -4,11 +4,15 @@ class Animal {
  protected:
   Animal(int age);
   int mAge;
+
+ public:
+  void speak(const char* str);
 };
 
 Animal::Animal(int age) : mAge(age) {}
+void Animal::speak(const char* str) { std::cout << str << std::endl; }
 
-class Cat : protected Animal {
+class Cat : public Animal {
  public:
   Cat(int age, const char* name);
   ~Cat();
@@ -25,7 +29,7 @@ void Cat::print() {
 
 Cat::~Cat() {
   delete[] mName;
-  std::cout << "delete heapMemory" << std::endl;
+  std::cout << "delete heap Memory" << std::endl;
 }
 
 Cat::Cat(int age, const char* name) : Animal(age) {
@@ -35,8 +39,10 @@ Cat::Cat(int age, const char* name) : Animal(age) {
 }
 
 int main(int argc, char const* argv[]) {
-  Cat myCat(3, "rusianBlue");
+  Cat myCat(3, "rusian Blue");
   myCat.print();
+  myCat.speak("야옹");
+
   /* code */
   return 0;
 }
