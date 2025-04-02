@@ -1,31 +1,30 @@
 #include <iostream>
 
 class Animal {
- protected:
-  Animal(int age);
   int mAge;
 
+ protected:
+  Animal(int age);
+
  public:
-  void speak(const char* str);
+  void getAge() const;
+  void speak(const char* str) const;
 };
 
 Animal::Animal(int age) : mAge(age) {}
-void Animal::speak(const char* str) { std::cout << str << std::endl; }
-
+void Animal::speak(const char* str) const { std::cout << str << std::endl; }
+void Animal::getAge() const { std::cout << mAge << std::endl; }
 class Cat : public Animal {
  public:
   Cat(int age, const char* name);
   ~Cat();
-  void print();
+  void print() const;
 
  private:
   char* mName;
 };
 
-void Cat::print() {
-  std::cout << "이름: " << mName << std::endl;
-  std::cout << "나이" << mAge << std::endl;
-}
+void Cat::print() const { std::cout << "이름: " << mName << std::endl; }
 
 Cat::~Cat() {
   delete[] mName;
@@ -42,6 +41,7 @@ int main(int argc, char const* argv[]) {
   Cat myCat(3, "rusian Blue");
   myCat.print();
   myCat.speak("야옹");
+  myCat.getAge();
 
   /* code */
   return 0;
