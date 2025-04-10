@@ -5,7 +5,7 @@ using namespace std;
 class Animal {
  public:
   Animal(int legs, int age);
-  ~Animal();
+  virtual ~Animal();
   void speak();
 
  private:
