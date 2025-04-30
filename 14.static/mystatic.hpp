@@ -3,7 +3,8 @@ extern int global;
 
 class Svalue {
  public:
-  void getValue();
+  void increaseValue();
+  void increaseCount();
 
  private:
   static int mCount;
