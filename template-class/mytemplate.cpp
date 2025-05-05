@@ -1,5 +1,5 @@
 #include <typeinfo>
-template <class T>
+template <typename T>
 class Vector {
  public:
   Vector(T, T);
