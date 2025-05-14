@@ -12,7 +12,7 @@ int main(int argc, char const *argv[]) {
   anotherScores.assign(100, 100);
   anotherScores.swap(scores);
 
-  printf("%d", scores[0]);
+  printf("%d\n", scores[0]);
 
   return 0;
 }
