@@ -15,6 +15,6 @@ int main(int argc, char const *argv[]) {
 
   myValue.increaseCount();
   myValue.increaseCount();
-
+  
   return 0;
 }

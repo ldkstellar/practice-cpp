@@ -12,7 +12,7 @@ void Svalue::increaseValue() {
 }
 
 void Svalue::increaseCount() {
-  static int count = -1;
+  static int count = -1;// 프로그램 종료시까지 유지된다.
   ++count;
   printf("%d\n", count);
 }
