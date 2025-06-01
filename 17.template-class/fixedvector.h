@@ -24,6 +24,7 @@ bool FixedVector<T, N>::Add(const T& data) {
     mSize++;
     return true;
   }
+
   return false;
 }
 template <typename T, size_t N>
