@@ -19,7 +19,7 @@ FixedVector<T, N>::FixedVector() : mSize(0) {}
 // const int&은 임시 객체는 받을 수 있기 때문에 리터럴도 문제없이 참조 가능하다.
 template <typename T, size_t N>
 bool FixedVector<T, N>::Add(const T& data) {
-  if (mSize != N) {
+  if (mSize <= N) {
     mArray[mSize] = data;
     mSize++;
     return true;
