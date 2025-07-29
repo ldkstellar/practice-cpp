@@ -4,6 +4,7 @@ class MyString {
   MyString(const char* str);
   MyString(MyString&& other);
   ~MyString();
+  MyString& operator=(MyString&& other);
   const char* str();
 
  private:

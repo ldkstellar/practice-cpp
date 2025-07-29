@@ -11,11 +11,25 @@ MyString::MyString(const char* str) : msize(strlen(str) + 1) {
   mString = new char[msize];
   memcpy(mString, str, msize);
 }
+
 MyString::MyString(MyString&& other) {
   mString = other.mString;  //
   msize = other.msize;
   other.mString = nullptr;
   other.msize = 0;
 }
+
 const char* MyString::str() { return mString; }
+
+MyString& MyString::operator=(MyString&& other) {
+  if (this != &other) {
+    delete[] mString;
+    mString = other.mString;
+    msize = other.msize;
+    other.mString = nullptr;
+    other.msize = 0;
+  }
+  return *this;
+}
+
 MyString::~MyString() { delete[] mString; }
