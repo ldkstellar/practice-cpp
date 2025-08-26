@@ -10,6 +10,7 @@ void PrintMessage(const std::string& message, int count) {
 int main(int argc, char const* argv[]) {
   std::thread thread(PrintMessage, "Message from a child thread.", 10);
   PrintMessage("waiting the child thread...", 1);
-  thread.detach();  // 자식을 버리고 집에오기
+  thread.detach();  // 자식을 버리고 집에오기 메인죽으면 자식 스레드도 죽는다.
+                    // 다시 join 불가능
   return 0;
 }
