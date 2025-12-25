@@ -4,15 +4,13 @@ struct Man
     std::string name;
     int age;
     
-}lee
+}Lee;
 
-
-strcountry
 
 int main(int argc, char const *argv[])
 {
-    lee.age =28;
-    lee.name= "dongkyu";
+    Lee.age =28;
+    Lee.name= "dongkyu";
     return 0;
 }
 
