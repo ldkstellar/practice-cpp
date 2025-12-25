@@ -1,36 +1,38 @@
 #include <iostream>
+class Animal {};
 
-#include "animal.hpp"
+class Dog : public Animal {
+private:
+  /* data */
+public:
+  Dog(/* args */);
+  ~Dog();
+};
 
-void printCstyle() {
-  float number1 = 3.f;
-  printf("%f\n", number1);
+Dog::Dog(/* args */) {}
 
-  int number2 = (int)number1;
-  printf("%d", number2);
-  Animal* myPet = new Cat(4, 13, "Lee");
-  Cat* myCat = (Cat*)myPet;
+Dog::~Dog() {}
 
-  myCat->callName();
-  delete myCat;
-  printf("\n");
-}
+int main(int argc, char const *argv[]) {
+  // c style 컴파일러에 따라 다르게 해석할 수 있다.
+  int a = 4;
+  float b = (float)a + 3.32345;
+  std::cout << b << " ";
 
-void printCppstyle() {
-  float number1 = 3.f;
-  printf("%f\n", number1);
+  int c = 10;
+  float e = static_cast<float>(c) + 1.3456;
+  std::cout << e << std::endl;
 
-  int number2 = static_cast<int>(number1);
-  printf("%d", number2);
-  Animal* myPet = new Cat(4, 13, "Lee");
-  Cat* myCat = static_cast<Cat*>(myPet);
+  Dog *dog = new Dog;
+  Animal *animal = dynamic_cast<Animal *>(dog);
+  if (animal != NULL) {
+    std::cout << "가능합니다.";
+  }
 
-  myCat->callName();
-  delete myCat;
-}
-
-int main(int argc, char const* argv[]) {
-  printCstyle();
-  printCppstyle();
+  // const int 사용방법
+  const int *t = 0;
+  int *p = 0, *q = 0;
+  t = p;
+  q = const_cast<int *>(t);
   return 0;
 }
