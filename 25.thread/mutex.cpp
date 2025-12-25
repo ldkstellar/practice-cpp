@@ -6,9 +6,9 @@
 
 void printMeassge(const std::string& meassage) {
   static std::mutex sMutex;
-  sMutex.lock();
+  sMutex.lock();// 공유자원잠근 아무도 못한다.
   std::cout << meassage << std::endl;
-  sMutex.unlock();
+  sMutex.unlock();// 여기서 풀어준다.
 }
 
 int main(int argc, char const* argv[]) {
