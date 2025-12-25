@@ -1,7 +1,20 @@
 #include <iostream>
 #include <memory>
+class MyVector {
+public:
+  MyVector(float, float);
 
-#include "myVector.h"
+  void print();
+
+private:
+  float mX;
+  float mY;
+  /* data */
+};
+
+MyVector::MyVector(float x, float y) : mX(x), mY(y) {}
+void MyVector::print() { std::cout << mX << " " << mY << std::endl; }
+
 void hello(const MyVector* other);
 int main(int argc, char const* argv[]) {
   std::unique_ptr<MyVector> vector(new MyVector(10.f, 30.f));
